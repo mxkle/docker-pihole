@@ -11,5 +11,7 @@ services:
       ServerIP: "${SERVER_IP}"
     volumes:
       - /srv/pihole/:/etc/pihole/
+        # pihole.log has to be created before container comes up
       - /srv/pihole/pihole.log:/var/log/pihole.log
-restart: unless-stopped
+    restart: unless-stopped
+
